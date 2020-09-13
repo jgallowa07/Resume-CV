@@ -1,0 +1,395 @@
+%-------------------------
+% Resume in Latex
+% Author : Jared Galloway
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{bibentry}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\usepackage{hyperref}
+\hypersetup{
+    %colorlinks=true,
+    %linkcolor=blue,
+    %filecolor=magenta,      
+    %urlcolor=blue,
+}
+\urlstyle{same}
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\bfseries#2}}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Jared G. Galloway, M.Sc.} \\
+  &  \href{jaredgalloway07@gmail.com}{jaredgalloway07@gmail.com} \\
+  &  \href{https://github.com/jgallowa07}{https://github.com/jgallowa07} \\
+  &  \href{http://jaredgalloway.org/}{http://jaredgalloway.org/} \\
+  &  +1-406-579-6768
+\end{tabular*}
+
+%-----------PERSONAL STATEMENT--------
+%\section{Personal Statement}
+%Utilizing a backgound in computer science and an interest in biological mechanisms, i
+%I have focused on using machine learning and simulation techniques to 
+% understand how evolutionary forces influence the variation we see in species’ genomes. 
+% Moving forward I hope to leverage new computational techniques 
+
+%-----------EDUCATION-----------------
+\section{Education}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {Master of Science in Biology}{University of Oregon}
+            {Bioinformatics and Genomics Program}{June 2019 -- Exp. Dec. 2020}
+        \resumeSubheading
+            {Bachelor of Science in Computer and Information Science}{University of Oregon}
+            {Departmental Honors - Minor in Product Design}{Aug 2013 -- July 2018}
+    \resumeSubHeadingListEnd
+
+%--------PROGRAMMING SKILLS------------
+\section{Technical Skills}
+
+\resumeSubHeadingListStart
+    \resumeSubItem{Programming Languages}{Python, C/C++, Bash, R, Java, Javascript}
+    \resumeSubItem{Technologies}
+        {Unix, Git, Docker, Conda, 
+        Cmake, Snakemake, Numpy, 
+        Keras/Tensorflow, Vim, \LaTeX, HPCs}
+    \resumeSubItem{Mathematics}{Advanced and Bayesian Statistics, Linear Algebra, Discrete Math, Calculus}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+    \resumeSubHeadingListStart
+        
+        % Fred Hutch
+
+        \resumeSubheading
+            {Research Associate}
+            {Seattle, WA}
+            {Computational Biology -- Fred Hutchinson Cancer Research Center}
+            {March 2020 - Current}
+            \resumeItemListStart
+
+                \resumeItem{Teaching}
+                    {Lectured and proctored a graduate level class focused around Python/Bash scripting,
+                    Unix file formatting/parsing, and other algorithmic thinking activities. Additionally, I
+                    constructed Docker containers and a Jupyter notebook autograde pipeline for 
+                    students to have a unified environment for Python programming. Hosted office hours, and graded 
+                    $\approx 100$ assignments/exams per week with feedback.}
+
+                \resumeItem{Deep Learning \& Simulation}
+                    {For my graduate research project, I wrote a simulator to model florescent immuno-labeled 
+                    images. These simulations provided the dataset for training a convolutional neural network 
+                    which can be used for prediction of synapse location in empirical data.}
+
+            \resumeItemListEnd
+
+        % GE Position
+
+        \resumeSubheading
+            {Graduate Educator \& Researcher}
+            {Eugene, OR}
+            {Biology Department -- University of Oregon Graduate School}
+            {Aug 2019 - March 2020}
+            \resumeItemListStart
+
+                \resumeItem{Teaching}
+                    {Lectured and proctored a graduate level class focused around Python/Bash scripting,
+                    Unix file formatting/parsing, and other algorithmic thinking activities. Additionally, I
+                    constructed Docker containers and a Jupyter notebook autograde pipeline for 
+                    students to have a unified environment for Python programming. Hosted office hours, and graded 
+                    $\approx 100$ assignments/exams per week with feedback.}
+
+                \resumeItem{Deep Learning \& Simulation}
+                    {For my graduate research project, I wrote a simulator to model florescent immuno-labeled 
+                    images. These simulations provided the dataset for training a convolutional neural network 
+                    which can be used for prediction of synapse location in empirical data.}
+
+            \resumeItemListEnd
+
+        % KERN / RALPH LAB
+
+        \resumeSubheading
+            {Scientific Programmer}
+            {Eugene, OR}
+            {Institute of Ecology and Evolution -- Ralph \& Kern Labs}
+            {June 2018 - June 2019}
+            \resumeItemListStart
+
+                \resumeItem{Software Engineering}
+                    {Devolped for tskit$^{S5}$, stdpopsim$^{S3,P4}$. tsencode$^{S1}$, ReLERNN$^{S4,P3}$. 
+                    Leveraged continual unit, coverage, and format testing 
+                    to collaborate with multiple collogues for integration of
+                    novel methods.}
+
+                \resumeItem{Experimentation}                
+                    {Quantified simulated data for training deep 
+                    learning models with direct applicability to empirical data.
+                    Assisted Ph.D. students, post-docs, and faculty in the lab setting with 
+                    Python scripting, software installation, version control, cluster interface,
+                    and statical analysis.}
+
+                \resumeItem{Scalable Data Analysis}
+                    {Constructed Snakemake pipeline for analysis of PopSim$^{P4}$ framework for manuscript results section.
+                    This workflow produced results outlining a comparison of population demography inference tools while
+                    controlling for testing data.}
+
+            \resumeItemListEnd
+
+        % RALPH / UNDERGRADUATE WORK
+
+        \resumeSubheading
+            {Undergraduate Research Assistant}
+            {Eugene, OR}
+            {Mathematics Department -- University of Oregon}
+            {June 2017 - June 2018}
+            \resumeItemListStart
+
+                \resumeItem{Algorithmic Implementation}
+                    {Implemented tree sequence recording algorithm$^{P2}$ (in C++) 
+                    into widely used population genetic simulation software, SLiM$^{S6}$}
+
+                \resumeItem{Benchmarking Algorithmic Implementation}
+                    {Benchmarked the implementation of a novel algorithm$^{P2,P5}$.              
+                    Utilized cluster resourced to compare large scale simulations and measure performance across
+                    a range of metrics including memory allocation and user runtime.}
+
+                \resumeItem{Modeling for Population Genetics}
+                    {Developed and analyzed simulation models to study migration patterns involved in rapid evolution 
+                    of stickleback fish on the Alaskan coast$^{P1}$. This project involved the construction of
+                    a complex simulation model as well as Python scripts to analyze resulting data.}
+
+            \resumeItemListEnd
+ 
+       % GRADING
+
+        \resumeSubheading
+            {Discrete Math Course Grader}
+            {Eugene, OR}
+            {Mathematics Department -- University of Oregon}
+            {June 2016 - June 2017}
+            \resumeItemListStart
+
+                \resumeItem{Grading}
+                    {Graded and constructed feedback for $\approx 100$ 
+                    assignments per week focused on proofs, set theory, and combinatorics.}
+                
+            \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-------- Publications -----------------
+\section{Software}
+
+\begin{enumerate}
+
+\item [S2.] \href{https://github.com/popgensims/analysis/tree/master/n_t}{Analysis Pipeline $^{\dagger}$} \space \space
+        A pipeline to analyze the use of a python package popsim$^{S3}$. 
+        This pipeline is the primary infrastructure to exemplify the importance of standardized simulation 
+        data for benchmarking of novel methods.
+        
+        \space \url{https://github.com/popgensims/analysis}
+
+\item [S1.] \href{https://github.com/jgallowa07/tsencode}{TS Encode $^{\dagger}$} \space \space
+        This interface takes tskit$^{S5}$ \textit{tree sequence} objects 
+        and prepares them into 3D tensors to be used for machine learning or
+        visualization of population genetic processes. 
+        
+        \space \url{https://github.com/jgallowa07/tsencode}
+
+\item [S3.] \href{https://github.com/popgensims/stdpopsim}{stdpopsim $^{\dagger}$} \space \space
+        A population genetic modeling framework which provides
+        users access to a range of standardized simulation models. 
+        
+        \space \url{https://github.com/popgensims/stdpopsim}
+
+\item [S4.] \href{https://github.com/kern-lab/ReLERNN}{ReLERNN $^{\dagger}$} \space \space
+        Utilizing deep learning, this python interface allows users to input a genotype matrix, 
+        to infer the landscape of recombination with as little as four haploid samples. 
+
+        \space \url{https://github.com/kern-lab/ReLERNN}
+
+\item [S5.] \href{https://github.com/tskit-dev}{tskit - msprime} \space \space
+        \testbf{tskit} is a plethora of tools which rely on a cutting edge, tabular data structure, 
+        storing a forest of genealogical trees, dubbed \textit{TreeSequences}, relating all individuals at every genomic interval. 
+        msprime utilizes tskit for coalescent simulations.
+        
+        \space \url{https://github.com/tskit-dev}
+
+\item [S6.] \href{https://messerlab.org/slim/}{SLiM} \space \space
+        SLiM is a unique and extensive wright-fisher simulation software written with a C++ back end and 
+        interfaced with a specialized language, Eidos.
+        
+        \space \url{https://messerlab.org/slim/}
+
+\item [S7.] \href{https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter&hl=en_US}{Squirrel Suiter $^{\dagger}$} 
+        \space \space A fun 3D ``infinite flyer" I made with some friends in undergrad! 
+        
+        \space \url{https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter&hl=en_US}
+
+
+\end{enumerate}
+
+%-------- Publications -----------------
+\section{Publications \& Highlighted Achievements}
+%\nobibliography{ref}
+%\bibliographystyle{unsrt}
+%\nobibliography{ref}
+
+\begin{enumerate}
+\item [P1.] \textbf{Jared G. Galloway} $^{\dagger}$, William A. Cresko, Peter L. Ralph. A few stickleback suffice for the transport
+of alleles to new lakes. \textit{Published in} 
+\href{https://www.g3journal.org/content/early/2019/12/04/g3.119.400564}{G3: Genes, Genomes, and Genetics}, Oct 2019.
+\href{https://www.biorxiv.org/content/10.1101/713040v1.abstract}{BioArxiv}: 10.1101/713040v1
+
+\item [P2.] Benjamin C. Haller, \textbf{Jared G. Galloway}, Jerome Kelleher, Philipp W. Messer, and Peter L. Ralph.
+Tree-sequence recording in SLiM opens new horizons for forward-time simulation of whole genomes. 
+\textit{Published in} 
+\href{https://onlinelibrary.wiley.com/doi/abs/10.1111/1755-0998.12968}{MER: Molecular Ecology Resources}, 19(2):552-566. Jan 2019. 
+\href{https://www.biorxiv.org/content/10.1101/407783v1}{BioArxiv}: 10.1101/407783v1 
+
+\item [P3.] Jeffrey R. Adrion, \textbf{Jared G. Galloway} $^{\dagger}$, Andrew D. Kern. Inferring the landscape of recombination 
+using recurrent neural networks. \textit{Accepted in} 
+\href{https://academic.oup.com/mbe}{Molecular Biology and Evolution}, Jan 2020.
+\href{https://www.biorxiv.org/content/10.1101/662247v1.abstract}{BioArxiv}: 10.1101/662247v1
+
+\item [P4.] \textbf{Jared G. Galloway} $^{\dagger}$, PopSim Consortium:
+A community-maintained standard library of population genetic simulations.
+\textit{Under Review at}
+\href{https://elifesciences.org/?gclid=CjwKCAiA6vXwBRBKEiwAYE7iS0LA_KboY5NjoOVJAMq06BEUSsqPFV9R1GA1NUUIgYw2XgTiv1fUxhoC3xYQAvD_BwE}{eLife}, Jan 2020.
+\href{https://www.biorxiv.org/content/10.1101/2019.12.20.885129v1}{BioArxiv}: 10.1101/2019.12.20.885129 
+
+\item [P5.] \textbf{Jared G. Galloway} $^{\dagger}$. Speeding up the Tortoise: a case study in the optimization of forward-moving
+evolutionary simulations. \textit{Undergraduate Thesis - CIS dept. University of Oregon.} 
+\href{https://www.cs.uoregon.edu/Reports/UG-201806-Galloway.pdf}{University Arxiv}: https://www.cs.uoregon.edu/Reports/UG-201806-Galloway.pdf
+
+\item [P6.] $300+$ Hours community service building trail for Montana Conservation Corps. 
+\href{https://mtcorps.org/}{website}: https://mtcorps.org/
+
+\begin{center}
+$^{\dagger}$ primary/significant author
+\end{center}
+
+\end{enumerate}
+
+%\section{Achievments}
+%
+%\resumeSubHeadingListStart
+%    \resumeSubItem{Graduate Thesis project}{Machine learning for identifying synapses}{blah}
+%    \resumeSubItem{}{}
+%    \resumeSubItem{Community Service}{Built trail for Montana Conservation Corps and acquired 300+
+%        hours community service}
+%\resumeSubHeadingListEnd
+
+
+%-------- REFERENCES -----------------
+%\section{References}
+%
+%\resumeSubHeadingListStart
+%    \resumeSubItem {Dr. Bill Cresko}
+%        {Research Advisor -
+%        \href{https://creskolab.uoregon.edu/}
+%        {Cresko Lab} - 
+%        wcresko@uoregon.edu}
+%    \resumeSubItem {Dr. Peter Ralph}
+%        {Research Advisor -
+%        \href{https://pages.uoregon.edu/plr/}
+%        {Ralph Lab} - 
+%        plr@uoregon.edu}
+%    \resumeSubItem {Dr. Andrew Kern}
+%        {Research Advisor -
+%        \href{http://www.kernlab.org/} 
+%        {Kern Lab} -
+%        adkern@uoregon.edu}
+%    \resumeSubItem {Dr. Ben Haller}
+%        {Research Advisor - 
+%        \href{http://benhaller.com/}
+%        {Website} - 
+%        haller@mac.com}
+%\resumeSubHeadingListEnd
+%
+%-------------------------------------------
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
