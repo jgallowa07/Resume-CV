@@ -87,7 +87,7 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Jared G. Galloway, M.Sc.} \\
+  \textbf{\Large Jared G. Galloway, M.S.} \\
   &  \href{jaredgalloway07@gmail.com}{jaredgalloway07@gmail.com} \\
   &  \href{https://github.com/jgallowa07}{https://github.com/jgallowa07} \\
   &  \href{http://jaredgalloway.org/}{http://jaredgalloway.org/} \\
@@ -116,10 +116,11 @@
 \section{Technical Skills}
 
 \resumeSubHeadingListStart
-    \resumeSubItem{Programming Languages}{Python, C/C++, Bash, R, Java, Javascript}
+    \resumeSubItem{Programming Languages}{Python, R, C/C++, Bash Java, Javascript}
     \resumeSubItem{Technologies}
         {Unix, Git, Docker, Conda, 
-        Cmake, Snakemake, Numpy, 
+        Cmake, Nextflow, Snakemake, Numpy, Pandas, Xarray,
+        ggplot (plotnine), Matplotlib,
         Keras/Tensorflow, Vim, \LaTeX, HPCs}
     \resumeSubItem{Mathematics}{Advanced and Bayesian Statistics, Linear Algebra, Discrete Math, Calculus}
 \resumeSubHeadingListEnd
@@ -137,17 +138,22 @@
             {March 2020 - Current}
             \resumeItemListStart
 
-                \resumeItem{Teaching}
-                    {Lectured and proctored a graduate level class focused around Python/Bash scripting,
-                    Unix file formatting/parsing, and other algorithmic thinking activities. Additionally, I
-                    constructed Docker containers and a Jupyter notebook autograde pipeline for 
-                    students to have a unified environment for Python programming. Hosted office hours, and graded 
-                    $\approx 100$ assignments/exams per week with feedback.}
+                \resumeItem{Bioinformatics}
+                    {Explored and developed a Nextflow pipeline using best practices for NGS reference alignment.
+                    Using this pipeline I've managed the bioinformatics for a variety of separate PhIP-Seq projects --
+                    A complex wet-lab technique for exploring the humoral protein interactions of interest using NGS and Oligonucleotide Synthesis.
+                    This work produced the data for all results in various publications.}
 
-                \resumeItem{Deep Learning \& Simulation}
-                    {For my graduate research project, I wrote a simulator to model florescent immuno-labeled 
-                    images. These simulations provided the dataset for training a convolutional neural network 
-                    which can be used for prediction of synapse location in empirical data.}
+                \resumeItem{Scientific Software Development}
+                    {Developed a python package for handling enrichment data from PhIP-Seq sample alignments.
+                    Managed version control, documentation, API, and more as needed by various projects.}
+
+                \resumeItem{Analysis}
+                    {Using the alignment and analysis tools described above I was tasked with data analysis giving results for various projects.
+                    Additionally, my analysis informed best practices for the wet lab protocol.}
+
+                \resumeItem{Team Organization}
+                	{Set up and let team meetings to brainstorm, and set short term goals for all team members involved with various PhIP-Seq projects.}
 
             \resumeItemListEnd
 
@@ -250,7 +256,7 @@
 
 \begin{enumerate}
 
-\item [S2.] \href{https://github.com/popgensims/analysis/tree/master/n_t}{Analysis Pipeline $^{\dagger}$} \space \space
+\item [S0.] \href{https://github.com/popgensims/analysis/tree/master/n_t}{Analysis pipeline for population demography inference $^{\dagger}$} \space \space
         A pipeline to analyze the use of a python package popsim$^{S3}$. 
         This pipeline is the primary infrastructure to exemplify the importance of standardized simulation 
         data for benchmarking of novel methods.
@@ -295,6 +301,32 @@
         \space \url{https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter&hl=en_US}
 
 
+\item [S7.] \href{https://github.com/matsengrp/phippery}{Phippery $^{\dagger}$} 
+        \space \space A set of tools to organize and query data resulting from PhIP-Seq experiments, most commonly 
+        referred to as the enrichment matrix.
+        This package heavily relies on the Xarray data structure and provides convenient tools to compute
+        various forms of normalization, modeling, and other common analysis methods.
+        
+        \space \url{https://github.com/matsengrp/phippery}
+
+
+\item [S8.] \href{https://github.com/matsengrp/phip-flow}{PhIP-Flow $^{\dagger}$}
+        \space \space A generalized Nextflow pipeline for aligning and organizing PhIP-Seq NGS data for downstream analysis.
+        The pipeline provides an intuitive set of input including sample and peptide metadata, and the relevant NGS files,
+        and produces a Xarray dataset containing the enrichment matrix tied to the respective metadata for each peptide and sample using unique
+        identifiers as the coordinate dimensions. 
+
+        \space \url{https://github.com/matsengrp/phip-flow}
+
+\item [S9.] \href{https://github.com/fhcrc/seqmagick}{SeqMagik}
+        \space \space We often have to convert sequence files between formats and do little manipulations on them, 
+        and it's not worth writing scripts for that. 
+        Seqmagick is a kickass little utility to expose the file format conversion in BioPython in a convenient way
+
+        \space \url{https://github.com/fhcrc/seqmagick}
+
+
+
 \end{enumerate}
 
 %-------- Publications -----------------
@@ -305,7 +337,8 @@
 
 \begin{enumerate}
 \item [P1.] \textbf{Jared G. Galloway} $^{\dagger}$, William A. Cresko, Peter L. Ralph. A few stickleback suffice for the transport
-of alleles to new lakes. \textit{Published in} 
+of alleles to new lakes. 
+\textit{Published in} 
 \href{https://www.g3journal.org/content/early/2019/12/04/g3.119.400564}{G3: Genes, Genomes, and Genetics}, Oct 2019.
 \href{https://www.biorxiv.org/content/10.1101/713040v1.abstract}{BioArxiv}: 10.1101/713040v1
 
@@ -316,13 +349,14 @@ Tree-sequence recording in SLiM opens new horizons for forward-time simulation o
 \href{https://www.biorxiv.org/content/10.1101/407783v1}{BioArxiv}: 10.1101/407783v1 
 
 \item [P3.] Jeffrey R. Adrion, \textbf{Jared G. Galloway} $^{\dagger}$, Andrew D. Kern. Inferring the landscape of recombination 
-using recurrent neural networks. \textit{Accepted in} 
+using recurrent neural networks. 
+\textit{Published in} 
 \href{https://academic.oup.com/mbe}{Molecular Biology and Evolution}, Jan 2020.
 \href{https://www.biorxiv.org/content/10.1101/662247v1.abstract}{BioArxiv}: 10.1101/662247v1
 
 \item [P4.] \textbf{Jared G. Galloway} $^{\dagger}$, PopSim Consortium:
 A community-maintained standard library of population genetic simulations.
-\textit{Under Review at}
+\textit{Published in}
 \href{https://elifesciences.org/?gclid=CjwKCAiA6vXwBRBKEiwAYE7iS0LA_KboY5NjoOVJAMq06BEUSsqPFV9R1GA1NUUIgYw2XgTiv1fUxhoC3xYQAvD_BwE}{eLife}, Jan 2020.
 \href{https://www.biorxiv.org/content/10.1101/2019.12.20.885129v1}{BioArxiv}: 10.1101/2019.12.20.885129 
 
@@ -332,6 +366,22 @@ evolutionary simulations. \textit{Undergraduate Thesis - CIS dept. University of
 
 \item [P6.] $300+$ Hours community service building trail for Montana Conservation Corps. 
 \href{https://mtcorps.org/}{website}: https://mtcorps.org/
+
+
+\item [P7.] Meghan E Garrett, \textbf{Jared Galloway} $^{\dagger}$, 
+Helen Y Chu, Hannah L Itell, Caitlin I Stoddard, Caitlin R Wolf, Jennifer K Logue, Dylan McDonald, Frederick A Matsen, Julie Overbaugh.
+High resolution profiling of pathways of escape for SARS-CoV-2 spike-binding antibodies.
+\textit{Under Review at}
+\href{https://www.nature.com/ncb/}{Cell Biology}, Nov 2020.
+\href{https://www.biorxiv.org/content/10.1101/2020.11.16.385278v1.abstract}{BioArxiv}: 10.1101/2020.11.16.385278
+
+
+\item [P8.] Caitlin I Stoddard, \textbf{Jared Galloway} $^{\dagger}$, 
+Helen Y Chu, Mackenzie M Shipley, Hannah L Itell, 
+Caitlin R Wolf, Jennifer K Logue, Ariana Magedson, Kevin Sung, Meghan Garrett, Katharine HD Crawford, Uri Laserson, Frederick A Matsen, Julie Overbaugh . 
+\textit{Under Review at}
+\href{https://elifesciences.org/?gclid=CjwKCAiA6vXwBRBKEiwAYE7iS0LA_KboY5NjoOVJAMq06BEUSsqPFV9R1GA1NUUIgYw2XgTiv1fUxhoC3xYQAvD_BwE}{eLife}, Nov 2020.
+\href{biorxiv.org/content/10.1101/2020.10.29.360800v1.abstract}{BioArxiv}: 10.1101/2020.10.29.360800
 
 \begin{center}
 $^{\dagger}$ primary/significant author
@@ -350,32 +400,42 @@ $^{\dagger}$ primary/significant author
 
 
 %-------- REFERENCES -----------------
-%\section{References}
-%
-%\resumeSubHeadingListStart
-%    \resumeSubItem {Dr. Bill Cresko}
-%        {Research Advisor -
-%        \href{https://creskolab.uoregon.edu/}
-%        {Cresko Lab} - 
-%        wcresko@uoregon.edu}
-%    \resumeSubItem {Dr. Peter Ralph}
-%        {Research Advisor -
-%        \href{https://pages.uoregon.edu/plr/}
-%        {Ralph Lab} - 
-%        plr@uoregon.edu}
-%    \resumeSubItem {Dr. Andrew Kern}
-%        {Research Advisor -
-%        \href{http://www.kernlab.org/} 
-%        {Kern Lab} -
-%        adkern@uoregon.edu}
-%    \resumeSubItem {Dr. Ben Haller}
-%        {Research Advisor - 
-%        \href{http://benhaller.com/}
-%        {Website} - 
-%        haller@mac.com}
-%\resumeSubHeadingListEnd
-%
-%-------------------------------------------
+\section{References}
+
+\resumeSubHeadingListStart
+    \resumeSubItem {Dr. Leslie Coonrod}
+        {Associate Director of Master's Program -
+        \href{https://accelerate.uoregon.edu/leslie-coonrod}
+        {Bioinformatics and Genomics Master's Program} -
+        coonrod@uoregon.edu}
+    \resumeSubItem {Dr. Stacey Wagner}
+        {Director of Master's Program -
+        \href{https://accelerate.uoregon.edu/stacey-wagner}
+        {Director of Life Sciences Program} - 
+        sdwagner@uoregon.edu}
+    \resumeSubItem {Dr. Bill Cresko}
+        {Research Advisor -
+        \href{https://creskolab.uoregon.edu/}
+        {Cresko Lab} - 
+        wcresko@uoregon.edu}
+    \resumeSubItem {Dr. Peter Ralph}
+        {Principal Investigator -
+        \href{https://pages.uoregon.edu/plr/}
+        {Ralph Lab} - 
+        plr@uoregon.edu}
+    \resumeSubItem {Dr. Andrew Kern}
+        {Principal Investigator -
+        \href{http://www.kernlab.org/} 
+        {Kern Lab} -
+        adkern@uoregon.edu}
+    \resumeSubItem {Dr. Ben Haller}
+        {Research Advisor - 
+        \href{http://benhaller.com/}
+        {Website} - 
+        haller@mac.com}
+\resumeSubHeadingListEnd
+
+-------------------------------------------
 \end{document}
 
 
