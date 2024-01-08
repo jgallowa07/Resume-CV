@@ -1,0 +1,35 @@
+import glob
+import os
+
+# where to put the output
+VariantDir('_build', src_dir='.')
+
+# create the build environment as the local environment
+env = Environment(ENV=os.environ)
+
+# add the pdflatex builder
+env['BUILDERS']['Copier'] = Builder(action = Copy('$TARGET', '$SOURCE'))
+
+# define the possible pdfs that you might want to show in the tex file
+pdfs = [env.Copier(target = '_build/' + os.path.basename(pdf), source = pdf)
+        for pdf in glob.glob('figures/*.pdf')]
+
+# define the main tex file
+main=env.PDF(target='_build/main.pdf',source='main.tex')
+
+# define the default target
+Depends(Flatten([main]),
+        Flatten([pdfs, 'first.bib', 'supporting.bib', 'unsrt_abbrv_custom.bst']))
+
+# define the continuous build target
+cont_build = env.Command(
+        '.continuous', 
+        ['first.bib', 'supporting.bib', 'unsrt_abbrv_custom.bst', 'main.tex'],
+        'while :; do inotifywait -e modify $SOURCES; scons -Q; done'
+)
+
+# define the default target to be the successful build from continuous builds
+Alias('continuous', cont_build)
+
+# define the default target to be the main pdf
+Default(main)
