@@ -79,8 +79,8 @@
 }
 
 \newcommand{\resumeItem}[2]{
-  \begin{minipage}[t]{0.9\textwidth}
-    \linespread{0.80}\selectfont
+  \begin{minipage}[t]{0.92\textwidth}
+    \linespread{0.85}\selectfont
     \vspace{.1cm}\item\small{
       \textbf{#1}{: #2 \vspace{1pt}}
     }
@@ -309,21 +309,22 @@ enjoy the discussion which follows.
                         Influenza, Lassa, and others 
                         -- each of which provide estimates of viral escape to antibodies of interest.
                         This work ultimately has provided analysis tools for various studies,
-                        inform the potential effectiveness of these antibodies as therapeutics.
+                        as well as inform the potential effectiveness of these antibodies as therapeutics.
                     }
                 \resumeItem{Bioinformatics for studying affinity maturation in germinal centers}
                     {
                         Created an efficient Nextflow pipeline 
                         which leveraged high performance computing clusters and
-                        software containerization to produce $>100$ feature-rich phylogenetic trees 
+                        software containerization to perform over 50K individual
+                        and produce $>140$ feature-rich phylogenetic trees 
                         of B-cell lineages within germinal centers of engineered mice.
                         This work has provided the foundational results for an ongoing large-scale, 
-                        collaborative study.
+                        multi-lab collaborative study.
                     }
                 \resumeItem{Administrative data management}
                     {
                         Contributed to the documentation and execution of best-practice
-                        management and storage of sensitive lab data in various computational 
+                        management and storage of sensitive data in various computational 
                         environments including HPC file systems and AWS S3 buckets.
                         Additionally was responsible for scrubbing sensitive data from
                         repositories before publication.
@@ -366,8 +367,9 @@ enjoy the discussion which follows.
 
                 \resumeItem{PhIP-Seq software and analysis}
                     {
-                        Developed a suite of software tools for
-                        analysis of raw Phage ImmunoPrecipitation Sequencing
+                        Developed a suite of software tools, 
+                        \href{https://matsengrp.github.io/phippery/introduction.html}{phippery}, 
+                        for analysis of raw Phage ImmunoPrecipitation Sequencing
                         (PhIP-Seq) data that consisted of;
                         a python package for modeling and computing enrichment statistics,
                         an interactive application for visualizing results of the processed data,
@@ -375,7 +377,9 @@ enjoy the discussion which follows.
                         Nextflow pipeline for encapsulating the 
                         common analysis workflows in a portable and reproducible manner.
                         In addition to informing best-practices and future experiments carried out in wet lab,
-                        This software was used to process data and produce results reported in 
+                        This software was used to process data and produce results for multiple collaborative publications
+                        and ongoing studies
+                        \cite{Garrett2022, Stoddard_2021, Garrett_2021, Stoddard_2023, Willcox_2022, Itell_2021}.
                     }
 
                 \resumeItem{Neural Networks for global epistasis modeling}
@@ -388,7 +392,7 @@ enjoy the discussion which follows.
                 	{
                         Set up and led team meetings to brainstorm, 
                         set, short-term goals, and present results for a range
-                        of team members across multiple labs and studies .
+                        of team members across multiple labs and studies.
                     }
 
             \resumeItemListEnd
@@ -404,7 +408,7 @@ enjoy the discussion which follows.
 
                 \resumeItem{Teaching}
                     {
-                        Taught and proctored exams for four classroom hours each week for 
+                        Led discussion, taught lessons and proctored exams for four classroom hours each week for 
                         a graduate level class focused around Python/Bash scripting,
                         Unix file formatting/parsing, and other algorithmic thinking activities. 
                     }
@@ -428,8 +432,8 @@ enjoy the discussion which follows.
 
                 \resumeItem{Software Engineering}
                     {
-                        Leveraged Software engineering best-practices of
-                        architecture design, version control, continuous integration, and more
+                        Leveraged Software engineering best-practices such as
+                        architecture design, version control, and continuous integration
                         for various open-source software projects including
                         \href{https://tskit.dev/}{tskit}, 
                         \href{https://popsim-consortium.github.io/stdpopsim-docs/stable/index.html}{stdpopsim},
@@ -445,7 +449,7 @@ enjoy the discussion which follows.
                     }
                 \resumeItem{Analysis of population demography inference tools}
                     {
-                        Constructed a snakemake pipeline for manuscript analysis
+                        Constructed a snakemake pipeline for published analysis
                         outlining a comparison of population demography inference tools \cite{Adrion_2020_stdpopsim}.
                     }
 
