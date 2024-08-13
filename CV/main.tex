@@ -3,7 +3,9 @@
 % Author : Jared Galloway
 %------------------------
 
-\documentclass[letterpaper,9pt]{article}
+% IF EDITING IN VSCODE, UST <alt>-z to wrap text
+
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -16,6 +18,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{fontawesome5}
+\usepackage{tabularx}
 
 \usepackage{multibib}
 \newcites{prim}{first/co-first author publications}
@@ -27,12 +30,13 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
+\usepackage[a4paper, margin=0.5in]{geometry}
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+% \addtolength{\oddsidemargin}{-0.3in}
+% \addtolength{\evensidemargin}{-0.3in}
+% \addtolength{\textwidth}{1in}
+% \addtolength{\topmargin}{-.3in}
+% \addtolength{\textheight}{1.0in}
 
 \usepackage{xcolor}
 \definecolor{mylightblue}{RGB}{70, 130, 180}
@@ -54,8 +58,9 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-1pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-1pt}]
+%}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
 % Custom commands
@@ -78,8 +83,10 @@
   }
 }
 
+
+
 \newcommand{\resumeItem}[2]{
-  \begin{minipage}[t]{0.92\textwidth}
+  \begin{minipage}[t]{0.89\textwidth}
     \linespread{0.85}\selectfont
     \vspace{.1cm}\item\small{
       \textbf{#1}{: #2 \vspace{1pt}}
@@ -87,12 +94,21 @@
   \end{minipage}
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
+% HEADINGS
+
+% #1 Position Name
+% #2 Employer Name
+% #3 Date started
+% #4 Date ended
+% #5 Location
+% #6 Additional Details (sub-department, position type, team etc.)
+
+\newcommand{\resumeSubheading}[6]{
+  \vspace{-3pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-3pt}
+      \textbf{#1} & \textbf{#2} \\
+      \textit{\small#6}&\textit{\small#5} $\cdot$ \textit{#3} $\rightarrow$ \textit{#4} \\
+    \end{tabular*}\vspace{-2pt}
 }
 
 \newcommand{\resumeSoftwareSubheading}[3]{
@@ -108,12 +124,12 @@
     \end{center}
 }
 
+% Simple items underneath a heading
+\newcommand{\resumeSubItem}[2]{\resumeNoWrapItem{#1}{#2}\vspace{-3pt}}
 
-\newcommand{\resumeSubItem}[2]{\resumeNoWrapItem{#1}{#2}\vspace{-2pt}}
-
+% level 1 and 2 bulletpoints for items
 \renewcommand{\labelitemi}{$\circ$}
 \renewcommand{\labelitemii}{$\cdot$}
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[]}
@@ -122,19 +138,44 @@
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% TODO make version with the link handles spelled out in text, too
+
 \begin{document}
 
+% \vspace{35pt}
+
+
+
+% CONTACT INFORMATION
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Jared Galloway} \\
-  \textit{Curriculum vitae} \\
-  &  jaredgalloway07@gmail.com  \\
-  &  +1-406-579-6768 \\
-  &  \href{http://jaredgalloway.org/}{\faGlobe} \
-  \href{https://github.com/jgallowa07}{\faGithub} \
-  \href{https://www.linkedin.com/in/jared-galloway-707836116/}{\faLinkedin} \
-  \href{https://orcid.org/0000-0001-5838-7840}{\faOrcid} \ 
-  \href{https://scholar.google.com/citations?user=zWo6lFcAAAAJ&hl=en}{\faGraduationCap}
+  \textbf{\Large Jared G. Galloway} & jaredgalloway07@gmail.com \\
+  \textit{Curriculum vitae} & +1-406-579-6768 \\
+  & Bozeman, MT \\
 \end{tabular*}
+
+% \vspace{2pt}
+
+\begin{center}
+\begin{tabularx}{0.83\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+    \href{http://jaredgalloway.org/}{\faGlobe} &
+    \href{https://github.com/jgallowa07}{\faGithub} &
+    \href{https://www.linkedin.com/in/jared-galloway-707836116/}{\faLinkedin} &
+    \href{https://scholar.google.com/citations?user=zWo6lFcAAAAJ}{\faGraduationCap} &
+    \href{https://orcid.org/0000-0001-5838-7840}{\faOrcid}
+\end{tabularx}
+\end{center}
+
+\vspace{-19pt}
+
+\begin{center}
+\begin{tabularx}{0.83\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+    \href{http://jaredgalloway.org/}{\small{jaredgalloway.org}} &
+    \href{https://github.com/jgallowa07}{\small{jgallowa07}} &
+    \href{https://www.linkedin.com/in/jared-galloway-707836116/}{\small{707836116}} &
+    \href{https://scholar.google.com/citations?user=zWo6lFcAAAAJ}{\small{zWo6lFcAAAAJ}} &
+    \href{https://orcid.org/0000-0001-5838-7840}{\small{0000-0001-5838-7840}}
+\end{tabularx}
+\end{center}
 
 %-----------PERSONAL STATEMENT--------
 
@@ -142,30 +183,11 @@
 
 \personalstatement{
 
-% I am a Data Scientist with a
-% computer and information science background,
-% and a focus on bioinformatics.
-% I have seven years of experience in an academic research environment 
-% conducting various flavors of 
-% methods development, implementation, and downstream analysis
-% in the biological sciences.
-% Hands-on experience has provided me with a strong intuition
-% for taking noisy empirical data through the various steps 
-% of filtering artifacts, normalization,  modeling, and visualization
-% to produce tidy, coherent, and reproducible datasets.
-% My education in product design is often reflected in my work
-% as I find particular interest in creating intuitive and aesthetically
-% pleasing data visualization and software interfaces. 
-% I take pride in clearly communicating my work
-% and very much enjoy the discussion that follows.
+I am an Engineer with a background in Computer \& Information Science and a focus on research in the Biological Sciences. I have seven years of hands-on experience conducting various flavors of methods development, implementation, and analysis in an academic research environment. In practice, my work has consisted primarily of creating machine learning-based software tools that allow researchers to analyze and interpret complex biological datasets. My research often involves using cutting-edge statistical methods to filter artifacts, normalize/encode data, fit models, and visualize data so that results are scientifically sound and practically useful. I take pride in clearly communicating my work and enjoy the discussions that follow.
 
-I am a Data Scientist with a computer and information science background, and a focus on bioinformatics. I have seven years
-of experience in an academic research environment conducting various flavors of methods development, implementation, and
-downstream analysis in the biological sciences. My hands-on experience has provided a strong intuition for taking noisy empirical data through
-the various steps of filtering artifacts, normalization, modeling, and visualization to produce tidy, coherent, and reproducible
-datasets. My education in product design is often reflected in my work as I find particular interest in creating intuitive and
-aesthetically pleasing data visualization and software interfaces. I take pride in clearly communicating my work, and
-enjoy the discussion which follows.
+% I am an Engineer with a background in Computer \& Information Science and a focus on research in the Biological Sciences. I have seven years of hands-on research experience conducting various flavors of methods development, implementation, and analysis in the academic environment. In practice, my work has consisted primarily of creating machine learning-based software tools that allow researchers to analyze and interpret complex biological datasets. My research often involves using cutting-edge statistical methods to filter artifacts, normalize / encode data, fit models, and visualize results coherently in a reproducible manner. Because I work in a rapidly evolving field with a wide variety of data types and formats, I've developed the ability to grasp the nuances of the data I'm analyzing through prelinary exploration techniques. This skill allows me to produce scientifically sound and practically useful results quickly. I take pride in clearly communicating my work and enjoy the discussions that follow.
+
+%I am an Engineer with a background in Computer \& Information Science and a focus on research in the Biological Sciences. I have seven years of hands-on research experience conducting various flavors of methods development, implementation, and analysis in the academic environment. In practice, my work has largely consisted of implementing machine learning-based software tools that allow researchers to analyze and interpret complex biological datasets. This often involves using cutting-edge statistical methods and tools to filter artifacts, normalize and encode data, fit models, and visualize results in a coherent and reproducible manner. Because I work in a rapidly evolving field with a wide variety of data types and formats, I've developed the ability to grasp the nuances of the data I'm analyzing quickly. This skill allows me to quickly produce results that are both scientifically sound and practically useful. I take pride in clearly communicating my work and enjoy the discussions that follow.
 
 % Being raised in Montaave been fortunate enough to
 % experience and foster appreciation for our natural world.
@@ -204,11 +226,19 @@ enjoy the discussion which follows.
 \section{Education}
     \resumeSubHeadingListStart
         \resumeSubheading
-            {Master of Science, Biology}{University of Oregon}
-            {Knight Campus - Bioinformatics and Genomics Program}{June 2019 -- December 2020, Eugene, OR}
+            {Master of Science $\cdot$ Biology}
+            {University of Oregon}
+            {June, 2019}
+            {December, 2020}
+            {Eugene, OR}
+            {Knight Campus $\cdot$ Bioinformatics and Genomics}
         \resumeSubheading
-            {Bachelor of Science, Computer \& Information Science}{University of Oregon}
-            {College of Arts and Sciences - Departmental Honors - Minor in Product Design}{Aug 2013 -- July 2018, Eugene, OR}
+            {Bachelor of Science $\cdot$ Computer \& Information Science}
+            {University of Oregon}
+            {August, 2013}
+            {July, 2018}
+            {Eugene, OR}
+            {Arts \& Sciences $\cdot$ Departmental Honors $\cdot$ Minor in Product Design}
     \resumeSubHeadingListEnd
 
 %--------PROGRAMMING SKILLS------------
@@ -217,22 +247,27 @@ enjoy the discussion which follows.
 \resumeSubHeadingListStart
     \resumeSubItem{Languages}
         {
-            Python, R, C/C++, Bash, Java, Javascript
+            Python (preferred), 
+            R, 
+            C/C++, 
+            Bash, 
+            Java, 
+            Javascript
         }
     \resumeSubItem{Mathematics}
         {
-            Advanced Statistics and Bayesian Modeling, 
+            Advanced and Bayesian Statistics, 
             Linear Algebra, 
             Discrete Math, 
             Calculus
         }
     \resumeSubItem{Operating systems}
         {
-            Linux, OSX, Windows
+            Linux (Ubuntu preferred), OSX, Windows
         }
     \resumeSubItem{Software}
         {
-            Git, GitHub Actions, Travis CI, Quay % version control 
+            Git, GitHub Actions, Travis CI, Quay, % version control 
             GNU make, cmake, scons, % build sysntems
             zshell/bash, vim, tmux, % command line interface 
             VSCode,
@@ -274,125 +309,92 @@ enjoy the discussion which follows.
 \section{Experience}
     \resumeSubHeadingListStart
 
-        \resumeSubheading
-            {Bioinformatics Analyst II}
-            {Fred Hutchinson Cancer Center}
-            {Public Health Sciences Division - Matsen Lab}
-            {Jan 2021 - Current, Bozeman, MT (Remote)}
-            \resumeItemListStart
+        % \resumeSubheading
+        %     {}                        Position Name
+        %     {}                        Employer Name
+        %     {}                        Dates worked
+        %     {}                        Location
+        %     {}                        Additional Details (sub-department, position type, team etc.)
+        %     \resumeItemListStart       
+        %         \resumeItem{}
+        %         {}
+        %     \resumeItemListEnd
 
-                \resumeItem{Modeling Deep Mutational Scanning datasets}
+        \resumeSubheading
+            {Bioinformatics Specialist}
+            {Howard Hughes Medical Institute}
+            {January, 2024}
+            {Current}
+            {Bozeman, MT (Remote)}
+            {Public Health Sciences Division $\cdot$ Matsen Lab}
+            \resumeItemListStart       
+                \resumeItem{Jointly modeling deep mutational scanning (DMS) datasets}
                     {
-                        Developed a novel approach for jointly modeling multiple distinct
-                        DMS experimental datasets. The method was validated via simulation 
-                        and integrated into a JAX-based python package,
-                        \href{https://matsengrp.github.io/multidms/}{multidms}.
-                        Application of this method on empirical data has resulted the 
-                        identification of specific shifts in mutational
-                        effect between three separate homologs of the SARS-CoV-2 spike protein \cite{Haddox_2023}.
-                    }
-                \resumeItem{Algorithmic design for mutational fitness estimation}
-                    {
-                        Implemented complex algorithm for 
-                        estimating mutational fitness trajectories (through time) for 
-                        every possible codon-mutation that may have occurred 
-                        within a phylogeny (evolutionary history) of $>13$ million empirical viral genomes.
-                        Using the Snakemake workflow manager, I integrated this
-                        together with upstream quality control
-                        and downstream analysis
-                        to produce the results driving an ongoing study.
-                    }
-                \resumeItem{Genomic surveillance of viral escape}
-                    {
-                        Built and deployed custom, public Nextstrain pages for viruses such as 
-                        \href{https://nextstrain.org/groups/dms-phenotype/ncov/Dadonaite-2023-Cell}{SARS-CoV-2},
-                        Influenza, Lassa, and others 
-                        -- each of which provide estimates of viral escape to antibodies of interest.
-                        This work ultimately has provided analysis tools for various studies,
-                        as well as inform the potential effectiveness of these antibodies as therapeutics.
+                        Developed a novel approach for jointly modeling multiple distinct DMS experimental datasets. The method was validated \textit{in-silico} (using simulated data) as well as \textit{in-vitro} (testing mutations in the lab, directly). I implemented a functional API into a JAX-based python package, \href{https://matsengrp.github.io/multidms/}{multidms} \cite{Haddox_2023}, which is now used in a primary analysis pipeline across multiple labs.
                     }
                 \resumeItem{Bioinformatics for studying affinity maturation in germinal centers}
                     {
-                        Created an efficient Nextflow pipeline 
-                        which leveraged high performance computing clusters and
-                        software containerization to perform over 50K individual
-                        and produce $>140$ feature-rich phylogenetic trees 
-                        of B-cell lineages within germinal centers of engineered mice.
-                        This work has provided the foundational results for an ongoing large-scale, 
-                        multi-lab collaborative study.
+                        Working with wet lab researchers to meet their needs, I created an efficient Nextflow pipeline that leveraged high-performance computing clusters and software containerization to perform over 50K independent data-processing steps and produce more than $140$ feature-rich phylogenetic trees. This work has provided the primary data and analysis for an ongoing large, collaborative study across multiple groups.
                     }
                 \resumeItem{Administrative data management}
                     {
-                        Contributed to the documentation and execution of best-practice
-                        management and storage of sensitive data in various computational 
-                        environments including HPC file systems and AWS S3 buckets.
-                        Additionally was responsible for scrubbing sensitive data from
-                        repositories before publication.
+                        Executed best-practice management and storage of sensitive data in various computational environments including HPC file systems and AWS S3 buckets. Additionally, I was responsible for scrubbing sensitive data from repository histories before publication.
                     }
                 \resumeItem{Visualization/Communication of results}
                     {
-                        Visualized data for researchers and produced finalized figures for publication
-                        to clearly communicate patterns in data.
-                        Additionally, I regularly presented results and background of my research projects
-                        to a range of audiences including lab meetings, collaborative meetings, and team meetings.
+                        Visualized data for researchers and produced final figures for publication to communicate patterns in data clearly. Regularly presented results and background of my research projects to a range of audiences including lab meetings, collaborative meetings, and team meetings.`'
+                    }
+
+            \resumeItemListEnd
+
+
+        \resumeSubheading
+            {Bioinformatics Analyst II}
+            {Fred Hutchinson Cancer Center}
+            {January, 2021}
+            {January, 2024}
+            {Bozeman, MT (Remote)}
+            {Public Health Sciences Division $\cdot$ Matsen Lab}
+            \resumeItemListStart
+
+                \resumeItem{Algorithmic design for mutational fitness estimation}
+                    {
+                        As requested by researchers, I conceptualized and implemented an algorithmic approach into a custom Snakemake pipeline for estimating mutational fitness trajectories (through time) for every possible codon-mutation that may have occurred within a phylogeny (evolutionary history) of more than $13$ million empirical viral genomes.
+                    }
+                \resumeItem{Genomic surveillance of viral escape}
+                    {
+                        Built and deployed custom, public Nextstrain pages for viruses such as \href{https://nextstrain.org/groups/dms-phenotype/ncov/Dadonaite-2023-Cell}{SARS-CoV-2}, Influenza, Lassa, and others -- each of which provide estimates of viral escape to antibodies of interest. This work has provided analysis tools for various studies and informed the potential effectiveness of these antibodies as therapeutics.
                     }
                 \resumeItem{Collogue consultation}
                     {
-                        Provided various degrees of guidance and education to 
-                        undergraduate interns, graduate students, postdocs, and various other faculty around the hutch
-                        with computational tasks surrounding active research projects as well as employee onboarding.
-                        This includes, but is not limited to,
-                        algorithmic implementation,
-                        command line interface,
-                        HPC clusters,
-                        batch submission (SLURM managed),
-                        workflow management,
-                        machine learning model exploration,
-                        data formatting,
-                        version control, 
-                        compute environments, 
-                        and build systems.
+                        Provided various degrees of help and guidance to undergraduate interns, graduate students, postdocs, and other faculty with computational tasks surrounding active research projects and employee onboarding. These tasks include but are not limited to algorithmic implementation, command line interface, HPC clusters, workflow management, machine learning, version control, compute environments, and build systems.
                     }
 
             \resumeItemListEnd
         
         % Fred Hutch Internship
-
+        \newpage
         \resumeSubheading
             {Research Associate}
             {Fred Hutchinson Cancer Center}
-            {Computational Biology -- Matsen Lab}
-            {March 2020 - Dec. 2020, Seattle, WA}
+            {March, 2020}
+            {December, 2020}
+            {Seattle, WA}
+            {Paid Internship $\cdot$ Computational Biology $\cdot$ Matsen Lab}
             \resumeItemListStart
 
                 \resumeItem{PhIP-Seq software and analysis}
                     {
-                        Developed a suite of software tools, 
-                        \href{https://matsengrp.github.io/phippery/introduction.html}{phippery}, 
-                        for analysis of raw Phage ImmunoPrecipitation Sequencing
-                        (PhIP-Seq) data that consisted of;
-                        a python package for modeling and computing enrichment statistics,
-                        an interactive application for visualizing results of the processed data,
-                        and an end-to-end (raw data $\rightarrow$ results) 
-                        Nextflow pipeline for encapsulating the 
-                        common analysis workflows in a portable and reproducible manner.
-                        In addition to informing best-practices and future experiments carried out in wet lab,
-                        This software was used to process data and produce results for multiple collaborative publications
-                        and ongoing studies
-                        \cite{Garrett_2022, Stoddard_2021, Garrett_2021, Stoddard_2023, Willcox_2022, Itell_2021}.
+                        Developed a suite of software tools, \href{https://matsengrp.github.io/phippery/introduction.html}{phippery}, for analysis of raw Phage ImmunoPrecipitation Sequencing (PhIP-Seq) data that consisted of a python package for modeling and computing enrichment statistics, an interactive application for visualizing results of the processed data, and an end-to-end (raw data $\rightarrow$ results) Nextflow pipeline for encapsulating the standard analysis workflows in a portable and reproducible manner. In addition, it will inform us of best practices and future experiments carried out in the wet lab. Multiple collaborative publications have used this software to process data and produce results \cite{Garrett_2022, Stoddard_2021, Garrett_2021, Stoddard_2023, Willcox_2022, Itell_2021}.
                     }
 
                 \resumeItem{Neural Networks for global epistasis modeling}
                     {
-                        Worked with a graduate student to implement a global epistasis
-                        modeling software package, \href{https://github.com/matsengrp/torchdms}{torchdms},
-                        using the PyTorch library.
+                        Worked with a graduate student to implement a global epistasis modeling software package, \href{https://github.com/matsengrp/torchdms}{torchdms}, using the PyTorch library.
                     }
                 \resumeItem{Team Organization}
                 	{
-                        Set up and led team meetings to brainstorm, 
-                        set, short-term goals, and present results for a range
-                        of team members across multiple labs and studies.
+                        Set up and led team meetings to brainstorm, set short-term goals, and present results across multiple labs and studies for various team members.
                     }
 
             \resumeItemListEnd
@@ -400,23 +402,21 @@ enjoy the discussion which follows.
         % GE Position
 
         \resumeSubheading
-            {Graduate Educator (BIO 410/510)}
+            {Graduate Teaching Fellow}
             {University of Oregon}
-            {Biology Department - Graduate Teaching Fellow}
-            {Aug 2019 - March 2020, Eugene, OR}
+            {August, 2019}
+            {March, 2020}
+            {Eugene, OR}
+            {BIO 410/510 $\cdot$ Biology Department $\cdot$ UO Graduate School}
             \resumeItemListStart
 
                 \resumeItem{Teaching}
                     {
-                        Led discussion, taught lessons and proctored exams for four classroom hours each week for 
-                        a graduate level class focused around Python/Bash scripting,
-                        Unix file formatting/parsing, and other algorithmic thinking activities. 
+                        Led discussions, taught lessons, and proctored exams for four classroom hours each week for a graduate-level class focused on Python/Bash scripting, Unix file formatting/parsing, and other algorithmic thinking activities. 
                     }
                 \resumeItem{Assignment Design}
                     {
-                        Constructed Docker containers and a Jupyter notebook auto-grade pipeline for 
-                        students to have a unified environment for Python programming. Hosted office hours, and graded 
-                        $\approx 100$ assignments/exams per week with feedback.
+                        Constructed Docker containers and a Jupyter Notebook auto-grade pipeline for students to have a unified environment for Python programming. Hosted office hours and graded $\approx 100$ assignments/exams per week with feedback.
                     }
 
             \resumeItemListEnd
@@ -426,31 +426,23 @@ enjoy the discussion which follows.
         \resumeSubheading
             {Scientific Programmer}
             {University of Oregon}
-            {Institute of Ecology and Evolution -- Ralph \& Kern Co-Lab}
-            {June 2018 - June 2019}
+            {June, 2018}
+            {June, 2019}
+            {Eugene, OR}
+            {Institute of Ecology and Evolution $\cdot$ Ralph \& Kern Co-Lab}
             \resumeItemListStart
 
                 \resumeItem{Software Engineering}
                     {
-                        Leveraged Software engineering best-practices such as
-                        architecture design, version control, and continuous integration
-                        for various open-source software projects including
-                        \href{https://tskit.dev/}{tskit}, 
-                        \href{https://popsim-consortium.github.io/stdpopsim-docs/stable/index.html}{stdpopsim},
-                        and \href{https://github.com/kr-colab/ReLERNN}{ReLERNN}.
+                        Leveraged Software engineering best practices such as architecture design, version control, and continuous integration for various open-source software projects, including \href{https://tskit.dev/}{tskit}, \href{https://popsim-consortium.github.io/stdpopsim-docs/stable/index.html}{stdpopsim}, and \href{https://github.com/kr-colab/ReLERNN}{ReLERNN}.
                     }
                 \resumeItem{Experimentation and model development}                
                     {
-                        Quantified the application of
-                        simulated data for training recurrent deep 
-                        learning models (RNN's) to predict recombination rate estimates 
-                        across the consensus genome of empirical populations.
-                        This work provided the analysis pipeline used in the resulting publication \cite{Adrion_2020_relernn}.
+                        Evaluated the application of simulated data for training recurrent deep learning models (RNNs) to predict recombination rate estimates across the consensus genome of empirical populations. This work provided the analysis pipeline in the resulting publication \cite{Adrion_2020_relernn}.
                     }
                 \resumeItem{Analysis of population demography inference tools}
                     {
-                        Constructed a snakemake pipeline for published analysis
-                        outlining a comparison of population demography inference tools \cite{Adrion_2020_stdpopsim}.
+                        Constructed a snakemake pipeline for published analysis outlining a comparison of population demography inference tools \cite{Adrion_2020_stdpopsim}.
                     }
 
             \resumeItemListEnd
@@ -460,30 +452,23 @@ enjoy the discussion which follows.
         \resumeSubheading
             {Undergraduate Research Assistant}
             {University of Oregon}
-            {Institute of Ecology and Evolution -- Ralph \& Kern Co-Lab}
-            {June 2017 - June 2018, Eugene, OR}
+            {June, 2017}
+            {June, 2018}
+            {Eugene, OR}
+            {Institute of Ecology and Evolution $\cdot$ Ralph \& Kern Co-Lab}
             \resumeItemListStart
 
                 \resumeItem{Algorithmic implementation of tree sequence recording}
                     {
-                        Implemented tree sequence recording algorithm
-                        into widely used population genetic simulation software, 
-                        \href{https://messerlab.org/slim/}{SLiM}, and contributed to the writing in
-                        the resulting publication \cite{Haller_2019}.
+                        Implemented tree sequence recording algorithm into widely used population genetic simulation software, \href{https://messerlab.org/slim/}{SLiM}, and contributed to the writing in the resulting publication \cite{Haller_2019}.
                     }
                 \resumeItem{Algorithmic benchmarking}
                     {
-                        Utilized cluster resources,
-                        visualization tools, and more to compare large scale simulations and benchmark performance across
-                        a range of metrics including memory allocation and user runtime.
-                        This was written up and formally presented in my
-                        \href{https://www.cs.uoregon.edu/Reports/UG-201806-Galloway.pdf}{undergraduate honors thesis}.
+                        Utilized cluster resources, visualization tools, and more to compare large-scale simulations and benchmark performance across various metrics, including memory allocation and user runtime. This work was written up and formally presented in my \href{https://www.cs.uoregon.edu/Reports/UG-201806-Galloway.pdf}{undergraduate honors thesis} and used to inform ongoing studies.
                     }
                 \resumeItem{Simulation studies of rapid evolution}
                     {
-                        Developed and analyzed simulation models to study migration patterns involved in rapid evolution 
-                        of stickleback fish on the Alaskan coast. 
-                        I then lead the publication of this study \cite{Galloway_2020}. 
+                        Developed and analyzed large-scale, realistic evolutionary simulation models to study migration patterns involved in the rapid evolution of stickleback fish on the Alaskan coast. I then lead the publication of this study \cite{Galloway_2020}.
                     }
             \resumeItemListEnd
  
@@ -492,14 +477,15 @@ enjoy the discussion which follows.
         \resumeSubheading
             {Discrete Math Course Grader}
             {University of Oregon}
+            {June, 2016}
+            {June, 2017}
+            {Eugene, OR}
             {Mathematics Department}
-            {June 2016 - June 2017, Eugene, OR}
             \resumeItemListStart
 
                 \resumeItem{Grading}
                     {
-                        Graded and constructed feedback for $\approx 100$ 
-                        assignments per week focused on proofs, set theory, and combinatorics.
+                        Graded and constructed feedback for $\approx 100$ weekly assignments focused on proofs, set theory, and combinatorics.
                     }
                 
             \resumeItemListEnd
@@ -518,14 +504,7 @@ enjoy the discussion which follows.
             \oldhref{https://github.com/matsengrp/multidms}{\faCode}
         }
         {
-            Using google's JAX library, this open-source python package 
-            provides the utilities for jointly modeling multiple distinct Deep Mutational Scanning datasets.
-            The interface includes a number of tools which help to easily prepare and encode data
-            initialize and fit models, perform out-of-sample prediction, 
-            as well as interactively visualizing 
-            the resulting parameter values of interest.
-            This software adds to the growing list of tools for modeling DMS data,
-            and has been used to produce results for multiple studies.
+            Using Google's JAX library, this open-source Python package provides the utilities for jointly modeling multiple distinct Deep Mutational Scanning datasets. The interface includes a number of tools that help to easily prepare and encode data, initialize and fit models, perform out-of-sample prediction, and interactively visualize the resulting parameter values of interest. This software adds to the growing list of tools for modeling DMS data and has been used to produce results for multiple studies.
         }
 
     \resumeSoftwareSubheading{phippery}
@@ -535,16 +514,7 @@ enjoy the discussion which follows.
             \oldhref{https://github.com/matsengrp/phippery}{\faCode}
         }
         {
-            The phippery software suite provides tools for analyzing data from phage display methods 
-            that use immunoprecipitation and deep sequencing to capture antibody binding to peptides, 
-            often referred to as PhIP-Seq. 
-            It has three main components that can be used separately or in conjunction: 
-            (i) a Nextflow pipeline, phip-flow, to process raw sequencing data into a compact, 
-            multidimensional dataset format and allows for end-to-end automation of reproducible workflows. 
-            (ii) a Python API, phippery, which provides interfaces for tasks such as count normalization, enrichment calculation, 
-            multidimensional scaling, modeling for significant enrichment of peptides, and finally 
-            (iii) a Streamlit application, phip-viz, as an interactive 
-            interface for visualizing the data as a heatmap in a flexible manner.
+            The phippery software suite provides tools for analyzing data from phage display methods that use immunoprecipitation and deep sequencing to capture antibody binding to peptides, often referred to as "PhIP-Seq" experiments. This software has three main components that can be used separately or in conjunction: (i) a Nextflow pipeline, phip-flow, to process raw sequencing data into a compact, multidimensional dataset format, allowing for end-to-end reproducible workflow automation. (ii) a Python API, peppery, which provides interfaces for tasks such as count normalization, enrichment calculation, multidimensional scaling, modeling for significant enrichment of peptides, and finally, (iii) a Streamlit application, phip-viz, as an interactive interface for visualizing the data as a heatmap in a flexible manner.
         }
     \resumeSoftwareSubheading{ReLERNN}
         {
@@ -552,35 +522,15 @@ enjoy the discussion which follows.
             \oldhref{https://github.com/kr-colab/ReLERNN}{\faCode}
         }
         {
-            A python-based CLI for recombination-landscape estimation 
-            using recurrent neural networks (\textit{ReLERNN}).
-            This software implements a deep learning method for estimating 
-            a genome-wide recombination map that is accurate 
-            even with small numbers of pooled or individually sequenced genomes. 
-            Rather than use summaries of linkage disequilibrium as its input, 
-            ReLERNN takes columns from a genotype alignment, 
-            which are then modeled as a sequence across the genome 
-            using a recurrent neural network.
+            \textit{ReLERNN} is a Python-based CLI tool for \textit{Re}combination-\textit{L}andscape \textit{E}stimation using \textit{R}ecurrent \textit{N}eural \textit{N}etworks. This software implements a deep learning method for estimating a genome-wide recombination map that is accurate even with small numbers of pooled or individually sequenced genomes. Rather than use summaries of linkage disequilibrium as its input, ReLERNN takes columns from a genotype alignment, which are then modeled as a sequence across the genome using a recurrent neural network.
         }
 
 \resumeSubHeadingListEnd
 
-%
-%\item [S1.] \href{https://github.com/jgallowa07/tsencode}{TS Encode $^\dagger$} \space \space 
-%        This interface takes tskit$^{S5}$ \textit{tree sequence} objects 
-%        and prepares them into 3D tensors to be used for machine learning or
-%        visualization of population genetic processes. 
-%        
-%        \space \url{https://github.com/jgallowa07/tsencode}
-%
-%\item [S7.] \href{https://play.google.com/store/apps/details?id=com.Nighthawks.SquirrelSuiter&hl=en_US}{Squirrel Suiter $^\dagger$} 
-%        \space \space A fun 3D ``infinite flyer" I made with some friends in undergrad! 
-%        
-
 %-------- Primary Author Publications -----------------
 \bibliographystyleprim{unsrt_abbrv_custom}
 \nociteprim{*}
-\small\bibliographyprim{first}
+\bibliographyprim{first}
 
 %-------- Supporting Author Publications -----------------
 \bibliographystylesupp{unsrt_abbrv_custom}
