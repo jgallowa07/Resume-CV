@@ -1,1 +1,10 @@
 Attic/
+.DS_Store
+
+# LaTeX build artifacts (final PDF is committed as CV/Jared_Galloway_CV.pdf)
+CV/main.pdf
+CV/*.aux
+CV/*.bbl
+CV/*.blg
+CV/*.log
+CV/*.out
